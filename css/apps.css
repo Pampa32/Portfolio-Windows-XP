@@ -1,0 +1,458 @@
+/*------------------------------------------ CALCULADORA ----------------------------------------*/
+
+#calculadora {
+    border: 3px solid #2662DE;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    width: 25%;
+    position: absolute;
+    right: 20%;
+    top: 65%;
+    background-color: #ECE9D8;
+
+}
+
+.titlebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: #2662DE;
+    box-shadow: inset 0 5px 5px #4e80e2;
+    color: white;
+        border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#titulo>img {
+    width: 10%;
+}
+
+#titulo>p {
+    margin: 0%;
+    padding: 0%;
+}
+
+#botonEsquina {
+    display: flex;
+}
+
+.cerrar {
+    margin: 3px;
+    margin-right: 5px;
+    color: white;
+    background: #AE391B;
+    background: linear-gradient(319deg, rgba(0, 0, 0, 1) 0%, rgba(229, 67, 13, 1) 50%, rgba(237, 149, 127, 1) 100%);
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.cerrar:active {
+    box-shadow: red 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.mini {
+    margin: 3px;
+    margin-right: 5px;
+    color: white;
+    background: #2662DE;
+    background: linear-gradient(319deg, rgb(0, 0, 0) 0%, #2662DE 50%, #4e80e2 100%);
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.1s;
+
+}
+
+.mini:active {
+    box-shadow: blue 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+#editbar {
+    background-color: #ECE9D8;
+    margin: 0px;
+}
+
+#editbar>button {
+    background-color: #ECE9D8;
+    border: none;
+    cursor: pointer;
+    margin: 2px;
+}
+
+#editbar>button:hover {
+    text-decoration: underline black;
+}
+
+#contenido {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 1px 1px white;
+}
+
+.pantalla {
+    margin-top: 10px;
+    border: 2px solid grey;
+    width: 85%;
+    padding-right: 7px;
+    padding-left: 5px;
+    height: 20px;
+    color: black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+#botonesGrandes {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+#botonesGrandes>button {
+    border: 2px solid grey;
+    width: 25%;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: #ECE9D8;
+    color: red;
+    cursor: pointer;
+    box-shadow: inset 0px -2px 3px #b4b2a4;
+}
+
+#botonesGrandes>button:active {
+    box-shadow: #8a8a88 0 3px 5px inset;
+    transform: translateY(2px);
+}
+
+
+
+#vacio {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    color: #ECE9D8;
+    box-shadow: inset 2px 2px #a5a295,
+        inset -2px -2px #f0efeb;
+
+}
+
+.teclado {
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.columna1 {
+    margin-right: 10px;
+    color: red;
+}
+
+.teclado button {
+    border: 2px solid grey;
+    background-color: #ECE9D8;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 14%;
+    height: 30px;
+    color: blue;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0px -2px 3px #b4b2a4;
+}
+
+.teclado button:active {
+    box-shadow: #8a8a88 0 3px 5px inset;
+    transform: translateY(2px);
+}
+
+/*----- MOVIL ------*/
+
+@media (min-width: 350px) and (max-width: 750px) {
+    #calculadora {
+        width: 80%;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+    }
+}
+
+
+
+/* ====================== SECCION MESSENGER CONTACTO =========================================================== */
+
+#contenedor-msn {
+    width: 35%;
+    top: 30px;
+    left: 50px;
+    position: absolute;
+    border: 3px solid #1f52b8;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#barra-cierre-msn {
+    height: 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cfccbb;
+    cursor: pointer;
+}
+
+#boton-esquina3-msn {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+#barra-cierre-msn img {
+    width: 55px;
+    padding: 0%;
+}
+
+#barra-cierre-msn p {
+    margin: 0%;
+}
+
+#barra-archivos-msn {
+    background-color: #ECE9D8;
+    margin: 0px;
+    border-bottom: 1px solid #b3b0a5;
+}
+
+#barra-archivos-msn>button {
+    background-color: #ECE9D8;
+    border: none;
+    cursor: pointer;
+    margin: 2px;
+}
+
+#barra-archivos-msn>button:hover {
+    text-decoration: underline black;
+}
+
+#contenedor-imagen-msn {
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    background-image: url(../img/barraIconosMns.png);
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#img-iconos-msn {
+    width: 100%;
+    height: 100%;
+}
+
+#contenedor-interaccion-msn {
+    display: flex;
+    background: #F2F5FE;
+    background: linear-gradient(119deg, rgba(242, 245, 254, 1) 0%, rgba(213, 224, 242, 1) 77%, rgba(249, 249, 251, 1) 100%);
+    border-bottom: 1px solid #b5becc;
+    margin-top: 0%;
+
+}
+
+#cajas-chat {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#caja-chat-invitado {
+    width: 90%;
+    margin-top: 15px;
+    border: 1px solid #4e80e2;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #e7eaf0;
+}
+
+#caja-chat-invitado-titulo {
+    width: 100%;
+    height: 20px;
+    background-color: #e7eaf0;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 1px solid #4e80e2;
+}
+
+#caja-chat-invitado-titulo p {
+    padding-left: 10px;
+}
+
+#caja-chat-invitado-texto {
+    width: 100%;
+    background-color: white;
+}
+
+#caja-chat-invitado-texto p {
+    margin: 0%;
+    padding: 25px;
+    padding-bottom: 60px;
+}
+
+#caja-chat-usuario {
+    width: 90%;
+    background-color: #edf3fd;
+    border: 1px solid #4e80e2;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#caja-chat-usuario-titulo {
+    display: flex;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#caja-chat-usuario-titulo img {
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#cajon-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 10px;
+    gap: 10px;
+}
+
+#cajon-texto button {
+    width: 20%;
+    border-radius: 7px;
+    box-shadow: inset -5px -5px 10px #c8d1e2,
+        2px 2px 5px #90aeeb;
+    border: 1px solid #4e80e2;
+    color: #96aedf;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#cajon-texto button:hover {
+    background-color: #ffffff;
+}
+
+#cajon-texto button:active {
+    box-shadow: #8a8a88 0 3px 5px inset;
+    transform: translateY(2px);
+}
+
+#boton1 {
+
+    padding: 17px 0px;
+}
+
+#boton2 {
+    padding: 8px;
+}
+
+
+#cajon-texto-footer {
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #4e80e2;
+    margin-bottom: 0%;
+}
+
+#cajas-perfiles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    gap: 30px;
+}
+
+.msn-perfiles {
+    border: 1px solid #4e80e2;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7px;
+    text-align: end !important;
+    margin-top: 15px;
+    padding: 5px;
+    background-color: #e7eaf0;
+}
+
+.msn-perfiles img {
+    width: 90%;
+    border: 1px solid #4e80e2;
+    border-radius: 7px;
+}
+
+#footer-contenedor-msn p {
+    margin: 0%;
+    padding: 5px 0px 5px 15px;
+    color: #4e80e2;
+}
+
+#footer-contenedor-msn {
+    background-color: #e7eaf0;
+}
+
+/* =========================
+   RESIZE WINDOWS (esquina)
+   ========================= */
+.ventana.is-resizable {
+  box-sizing: border-box;
+}
+
+/* Tirador esquina inferior derecha */
+.ventana .resizer.br{
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 14px;
+  height: 14px;
+  cursor: se-resize;
+  z-index: 99999;
+  /* look XP suave (sin imágenes) */
+  background:
+    linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.85) 50%) bottom right / 6px 6px no-repeat,
+    linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.6) 50%) bottom right / 10px 10px no-repeat;
+  opacity: 0.9;
+}
+
+/* Si la ventana está hidden, no hace falta mostrar el tirador */
+.ventana[hidden] .resizer.br{
+  display: none;
+}

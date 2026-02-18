@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Portfolio Nicolas Luini | Frontend Developer</title>
+
+    <meta name="description"
+        content="Portfolio interactivo estilo Windows XP con proyectos web, aplicaciones y experimentos desarrollados con HTML, CSS y JavaScript." />
+    <meta name="author" content="Nicolas Luini" />
+    <meta name="theme-color" content="#245edb" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/favicon-192.png">
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Portfolio Nicolas Luini">
+    <meta property="og:description" content="Interfaz Windows XP interactiva con proyectos y aplicaciones web.">
+    <meta property="og:image" content="img/preview-social.jpg">
+    <meta property="og:type" content="https://nicopampa.com/portfolio_personal/">
+
+    <link rel="stylesheet" href="css/estilos.css" />
+</head>
+
+
+<body>
+    <button id="btnFull">Pantalla completa</button>
+    <div id="cajaicons">
+        <a class="enlaceIcons" href="https://www.linkedin.com/in/nicolas-luini-30472a370/" rel="noopener noreferrer"
+            target="_blank">
+            <div class="divicons">
+                <img class="imgicons" src="img/My Computer.ico" />
+                <span>Curriculum</span>
+            </div>
+        </a>
+        <a class="enlaceIcons" data-toggle="contenedor-proyectos" href="#">
+            <div class="divicons">
+                <img class="imgicons" src="img/Folder Closed.ico" />
+                <span>Mis Proyectos</span>
+            </div>
+        </a>
+        <a class="enlaceIcons" data-toggle="contenedor-trabajos" href="#">
+            <div class="divicons">
+                <img class="imgicons" src="img/128px-Winamp-logo.svg.png" />
+                <span>Trabajos</span>
+            </div>
+        </a>
+        <a class="enlaceIcons" data-toggle="contenedor-aplicaciones" href="#">
+            <div class="divicons">
+                <img class="imgicons" src="img/284.ico" />
+                <span>Aplicaciones</span>
+            </div>
+        </a>
+        <a class="enlaceIcons" data-toggle="contenedor-msn" href="#" id="iconoContactoMsn">
+            <div class="divicons">
+                <img class="imgicons" src="img/msn-boneco-seeklogo.png" />
+                <span>Contacto</span>
+            </div>
+        </a>
+        <a class="enlaceIcons" data-toggle="error404" href="#">
+            <div class="divicons">
+                <img class="imgicons" src="img/explorer.png" />
+                <span>Experiencia</span>
+            </div>
+        </a>
+        <a class="enlaceIcons" href="https://github.com/Pampa32" rel="noopener noreferrer" target="_blank">
+            <div class="divicons">
+                <img class="imgicons" src="img/github.png" />
+                <span>Github</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- CALCULADORA -->
+    <div class="ventana" hidden="" id="calculadora">
+        <div class="titlebar">
+            <div id="titulo">
+                <img src="img/Calc.png" />
+                <p>Calculadora</p>
+            </div>
+            <div id="botonEsquina">
+                <button aria-label="Minimizar" class="mini" data-minimize="calculadora"
+                    type="button"><strong>_</strong></button>
+                <button aria-label="Cerrar" class="cerrar" data-close="calculadora"
+                    type="button"><strong>X</strong></button>
+            </div>
+        </div>
+        <div id="editbar">
+            <button>Edición</button>
+            <button>Ver</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="contenido">
+            <div class="pantalla">0</div>
+            <div id="botonesGrandes">
+                <div id="vacio"></div>
+                <button data-texto="">Bkspace</button>
+                <button data-accion="borrar">CE</button>
+                <button data-accion="reset">C</button>
+            </div>
+            <div class="teclado">
+                <button class="columna1" data-texto="" style="color: red;">MC</button>
+                <button data-texto="7">7</button>
+                <button data-texto="8">8</button>
+                <button data-texto="9">9</button>
+                <button data-texto="/" style="color: red;">/</button>
+                <button data-accion="">sqrt</button>
+                <button class="columna1" data-accion="" style="color: red;">MR</button>
+                <button data-texto="4">4</button>
+                <button data-texto="5">5</button>
+                <button data-texto="6">6</button>
+                <button data-texto="*" style="color: red;">*</button>
+                <button data-texto="%">%</button>
+                <button class="columna1" data-accion="" style="color: red;">MS</button>
+                <button data-texto="1">1</button>
+                <button data-texto="2">2</button>
+                <button data-texto="3">3</button>
+                <button data-texto="-" style="color: red;">−</button>
+                <button data-accion="">1/x</button>
+                <button class="columna1" data-accion="" style="color: red;">M+</button>
+                <button data-texto="0">0</button>
+                <button data-accion="">+/-</button>
+                <button data-texto=".">.</button>
+                <button data-texto="+" style="color: red;">+</button>
+                <button data-accion="igual" style="color: red;">=</button>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL CALCULADORA -->
+
+    <!-- CARTEL ERROR 404 -->
+    <div class="ventana" hidden="" id="error404">
+        <div id="tituloError">
+            <p>Error</p>
+            <button data-close="error404"><strong>X</strong></button>
+        </div>
+        <div id="cajaError">
+            <div id="textoError">
+                <p style="font-size: 40px; margin: 10px;">⚠️</p>
+                <p>Experiencia inexistente.<br />Ayudame a solucionar esto!</p>
+            </div>
+            <button data-close="error404">Aceptar</button>
+        </div>
+    </div>
+    <!-- FINAL CARTEL ERROR 404 -->
+
+    <!-- SECCION PROYECTOS -->
+    <div class="ventana" hidden="" id="contenedor-proyectos"> <!--hidden-->
+        <div class="titlebar2">
+            <div id="barra-cierre-proyectos">
+                <img src="img/opne-folder.png" />
+                <p> Mis Proyectos</p>
+                <div id="boton-esquina2">
+                    <button aria-label="Minimizar" class="mini" data-minimize="contenedor-proyectos"
+                        type="button"><strong>_</strong></button>
+                    <button aria-label="Cerrar" class="cerrar" data-close="contenedor-proyectos"
+                        type="button"><strong>X</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="barra-archivos-proyectos">
+            <button>Archivo</button>
+            <button>Edicion</button>
+            <button>Ver</button>
+            <button>Favoritos</button>
+            <button>Herramientas</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="barra-busqueda-proyectos">
+            <div id="botones-tools-proyectos">
+                <button><img alt="" src="img/izquierda.png" /> Atrás</button>
+                <button><img alt="" src="img/derecha.png" /></button>
+                <button><img alt="" src="img/mydocs.dll_14_100-8.png" /></button>
+            </div>
+            <div id="botones-busqueda-proyectos">
+                <button><img alt="" src="img/search_icon.png" /> Busqueda</button>
+                <button><img alt="" src="img/Folder Closed.ico" /> Carpetas</button>
+            </div>
+            <img alt="" src="" />
+        </div>
+        <div id="caja-archivos-proyectos">
+            <div class="imagen-archivos-proyectos">
+                <img alt="" src="img/barra-izquierda.png" />
+            </div>
+            <div id="archivos-enlaces-proyectos">
+                <a data-toggle="seccion-notas" href="#">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/readme.ico" />
+                        <span>README.txt</span>
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/globex_corporation/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/Folder Closed.ico" />Globex Corporation
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/Brottek/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/Folder Closed.ico" />WEB BROTTEK
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/autoescuela/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/Folder Closed.ico" />AUTOESCUELA
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL SECCION PROYECTOS -->
+
+
+    <!-- SECCION APLICACIONES -->
+    <div class="ventana" hidden="" id="contenedor-aplicaciones">
+        <div class="titlebar2">
+            <div id="barra-cierre-aplicaciones">
+                <img src="img/opne-folder.png" />
+                <p>Aplicaciones</p>
+                <div id="boton-esquina2-aplicaciones">
+                    <button aria-label="Minimizar" class="mini" data-minimize="contenedor-aplicaciones"
+                        type="button"><strong>_</strong></button>
+                    <button aria-label="Cerrar" class="cerrar" data-close="contenedor-aplicaciones"
+                        type="button"><strong>X</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="barra-archivos-aplicaciones">
+            <button>Archivo</button>
+            <button>Edicion</button>
+            <button>Ver</button>
+            <button>Favoritos</button>
+            <button>Herramientas</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="barra-busqueda-aplicaciones">
+            <div class="botones-tools-aplicaciones">
+                <button><img alt="" src="img/izquierda.png" /> Atrás</button>
+                <button><img alt="" src="img/derecha.png" /></button>
+                <button><img alt="" src="img/mydocs.dll_14_100-8.png" /></button>
+            </div>
+            <div id="botones-busqueda-aplicaciones">
+                <button><img alt="" src="img/search_icon.png" /> Busqueda</button>
+                <button><img alt="" src="img/Folder Closed.ico" /> Carpetas</button>
+            </div>
+            <img alt="" src="" />
+        </div>
+        <div id="caja-archivos-aplicaciones">
+            <div class="imagen-archivos-proyectos">
+                <img alt="" src="img/barra-izquierda.png" />
+            </div>
+            <div id="archivos-enlaces-aplicaciones">
+                <a data-toggle="seccion-notas-aplicaciones" href="#">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/readme.ico" />
+                        <span>README.txt</span>
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/viajeApp/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/game.png" />PampApp
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/AppGurea11/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/ICON-APP.png" />GureaApp
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/viaje-del-anillo-2/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/frodo.png" />ViajeAnillo
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/tactical_test_ATSS/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/tactical.png" />TacticalBoard
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL SECCION APLICACIONES -->
+
+    <!-- SECCION TRABAJOS -->
+    <div class="ventana" hidden="" id="contenedor-trabajos">
+        <div class="titlebar2">
+            <div id="barra-cierre-trabajos">
+                <img src="img/opne-folder.png" />
+                <p>Trabajos</p>
+                <div id="boton-esquina2-trabajos">
+                    <button aria-label="Minimizar" class="mini" data-minimize="contenedor-trabajos"
+                        type="button"><strong>_</strong></button>
+                    <button aria-label="Cerrar" class="cerrar" data-close="contenedor-trabajos"
+                        type="button"><strong>X</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="barra-archivos-trabajos">
+            <button>Archivo</button>
+            <button>Edicion</button>
+            <button>Ver</button>
+            <button>Favoritos</button>
+            <button>Herramientas</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="barra-busqueda-trabajos">
+            <div class="botones-tools-aplicaciones">
+                <button><img alt="" src="img/izquierda.png" /> Atrás</button>
+                <button><img alt="" src="img/derecha.png" /></button>
+                <button><img alt="" src="img/mydocs.dll_14_100-8.png" /></button>
+            </div>
+            <div id="botones-busqueda-trabajos">
+                <button><img alt="" src="img/search_icon.png" /> Busqueda</button>
+                <button><img alt="" src="img/Folder Closed.ico" /> Carpetas</button>
+            </div>
+            <img alt="" src="" />
+        </div>
+        <div id="caja-archivos-trabajos">
+            <div class="imagen-archivos-proyectos">
+                <img alt="" src="img/barra-izquierda.png" />
+            </div>
+            <div id="archivos-enlaces-trabajos">
+                <a data-toggle="seccion-notas-trabajos" href="#">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/readme.ico" />
+                        <span>README.txt</span>
+                    </div>
+                </a>
+                <a href="https://nicopampa.com/autoescuela/" rel="noopener noreferrer" target="_blank">
+                    <div class="caja-archivo">
+                        <img alt="" src="img/mydocs.dll_14_100-8.png" />Autoescuela
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL SECCION TRABAJOS -->
+
+    <!--  SECCION NOTAS -->
+    <div class="ventana" hidden="" id="seccion-notas">
+        <div id="barra-inicio-notas">
+            <div id="interna-inicio-notas">
+                <img src="img/readme.ico" />
+                <p>README.txt</p>
+                <div id="boton-esquina3">
+                    <button aria-label="Minimizar" class="mini" data-minimize="seccion-notas"
+                        type="button"><strong>_</strong></button>
+                    <button aria-label="Cerrar" class="cerrar" data-close="seccion-notas"
+                        type="button"><strong>X</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="barra-tools-notas">
+            <button>Archivo</button>
+            <button>Edición</button>
+            <button>Favoritos</button>
+            <button>Ver</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="caja-seccion-notas">
+            <p><strong>Bienvenido a la carpeta de Proyectos </strong> <br /> <br />
+
+                ¿Qué vas a encontrar? <br />
+
+                -Páginas web maquetadas: Ejercicios y proyectos con HTML, CSS, Bootstrap y un poco de JavaScript. <br />
+
+                -Aplicaciones web: Pequeños programas prácticos (calculadoras, juegos, experimentos con interfaces).
+                <br />
+
+                -Proyectos completos: Sitios más trabajados donde combino diseño, lógica y creatividad. <br />
+
+                -Pruebas y prototipos: Ideas en construcción, experimentos que forman parte de mi proceso de
+                aprendizaje. <br /> <br />
+            </p>
+        </div>
+    </div>
+    <!-- FINAL SECCION NOTAS -->
+
+    <!--  SECCION NOTAS APLICACIONES-->
+    <div class="ventana" hidden="" id="seccion-notas-aplicaciones">
+        <div id="barra-inicio-notas-aplicaciones">
+            <div id="interna-inicio-notas-aplicaciones">
+                <img src="img/readme.ico" />
+                <p>README.txt</p>
+                <div id="boton-esquina3-aplicaciones">
+                    <button aria-label="Minimizar" class="mini" data-minimize="seccion-notas-aplicaciones"
+                        type="button"><strong>_</strong></button>
+                    <button aria-label="Cerrar" class="cerrar" data-close="seccion-notas-aplicaciones"
+                        type="button"><strong>X</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="barra-tools-notas-aplicaciones">
+            <button>Archivo</button>
+            <button>Edición</button>
+            <button>Favoritos</button>
+            <button>Ver</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="caja-seccion-notas-aplicaciones">
+            <p><strong>Aplicaciones</strong> <br /> <br />
+                Aquí guardo las apps que he ido construyendo durante mi proceso como desarrollador.
+                Son proyectos reales, pensados, probados y mejorados con el tiempo.
+                Cada una representa horas de aprendizaje, errores, soluciones y muchas ganas de crear cosas útiles.
+                <br />
+                <strong>PD:</strong> para mejor intereacción instalar en el dispositivo!
+                <br /><br>
+                <strong>PampApp codigo:</strong>
+                <br />
+                <strong>Usuario: invitado</strong>
+                <br />
+                <strong>password: 12345</strong>
+                </br>
+            </p>
+        </div>
+    </div>
+    <!-- FINAL SECCION NOTAS APLICACIONES-->
+
+    <!--  SECCION NOTAS TRABAJOS-->
+    <div class="ventana" hidden="" id="seccion-notas-trabajos">
+        <div id="barra-inicio-notas-trabajos">
+            <div id="interna-inicio-notas-trabajos">
+                <img src="img/readme.ico" />
+                <p>README.txt</p>
+                <div id="boton-esquina3-trabajos">
+                    <button aria-label="Minimizar" class="mini" data-minimize="seccion-notas-trabajos"
+                        type="button"><strong>_</strong></button>
+                    <button aria-label="Cerrar" class="cerrar" data-close="seccion-notas-trabajos"
+                        type="button"><strong>X</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="barra-tools-notas-trabajos">
+            <button>Archivo</button>
+            <button>Edición</button>
+            <button>Favoritos</button>
+            <button>Ver</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="caja-seccion-notas-trabajos">
+            <p><strong>Autoescuela Aragón – Website Redesign</strong> <br /> <br />
+                Desarrollo completo de una nueva página web para Autoescuela Aragón, con el objetivo de modernizar su
+                presencia online y mejorar la experiencia del usuario frente a su sitio anterior, que presentaba
+                problemas de usabilidad y rendimiento. <br />
+
+                La nueva versión cuenta con un diseño limpio, responsivo y centrado en la conversión, adaptado a todo
+                tipo de dispositivos. Incluye un banner principal con efecto parallax, secciones informativas
+                organizadas por servicios y cursos, un formulario de contacto funcional, y botones flotantes de WhatsApp
+                y Google Maps para facilitar la comunicación directa con los clientes.
+
+            </p>
+        </div>
+    </div>
+    <!-- FINAL SECCION NOTAS TRABAJOS-->
+
+    <!--  SECCION MESSENGER CONTACTO-->
+    <div class="ventana" hidden="" id="contenedor-msn">
+        <div class="titlebar2">
+            <div id="barra-cierre-msn">
+                <img src="img/opne-folder.png" />
+                <p>Contacto</p>
+                <div id="boton-esquina3-msn">
+                    <button aria-label="Minimizar" class="mini" data-minimize="contenedor-msn"
+                        type="button"><strong>_</strong></button>
+                    <button aria-label="Cerrar" class="cerrar" data-close="contenedor-msn"
+                        type="button"><strong>X</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="barra-archivos-msn">
+            <button>Archivo</button>
+            <button>Editar</button>
+            <button>Acciones</button>
+            <button>Herramientas</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="contenedor-imagen-msn"></div>
+        <div id="contenedor-interaccion-msn">
+            <div id="cajas-chat">
+                <div id="caja-chat-invitado">
+                    <div id="caja-chat-invitado-titulo">
+                        <p>Para: usuario_invitado@hotmail.com</p>
+                    </div>
+                    <div id="caja-chat-invitado-texto">
+                        <p>
+                            <strong>Usuario_invitado</strong> dijo: <br /><br />
+                            Hola, ¿cómo puedo contactar contigo? <br /> <br />
+                            <strong>Nico:</strong> Puedes escribirme a: <br />
+                            <a href="mailto:nicoarg7@gmail.com" rel="noopener noreferrer"
+                                target="_blank">nicoarg7@gmail.com</a> <br />
+                            <a href="https://www.linkedin.com/in/nicolas-luini-30472a370/" rel="noopener noreferrer"
+                                target="_blank">"www.linkedin.com/nicolas-luini"</a>
+                        </p>
+                    </div>
+                </div>
+                <div id="caja-chat-usuario">
+                    <div id="caja-chat-usuario-titulo">
+                        <img alt="" src="img/barra2.png" />
+                    </div>
+                    <div id="cajon-texto">
+                        <button id="boton1"><strong>Enviar</strong> </button>
+                        <button id="boton2"><strong>Buscar</strong></button>
+                    </div>
+                    <div>
+                        <img alt="" id="cajon-texto-footer" src="img/barra3.png" />
+                    </div>
+                </div>
+            </div>
+            <div id="cajas-perfiles">
+                <div class="msn-perfiles">
+                    <img alt="" src="img/perfil1.png" />▼
+
+                </div>
+                <div class="msn-perfiles">
+                    <img alt="" src="img/perfil2.png" />▼
+
+                </div>
+            </div>
+        </div>
+        <div id="footer-contenedor-msn">
+            <p>Chatea cara a cara con amigos en messenger. Aprende como.</p>
+        </div>
+    </div>
+    <!--  FINAL SECCION MESSENGER CONTACTO-->
+    <footer>
+        <div id="barraTareas">
+            <button id="botonInicio">
+                <img id="logowindows" src="img/logo-windows-vector.png" />
+                <img id="logoInicio" src="img/preview.png" />
+            </button>
+            <img alt="" class="miniLogos" src="img/mozilla.png" />
+            <img alt="" class="miniLogos" src="img/winntbbu.dll_14_81-6.png" />
+            <img alt="" class="miniLogos" src="img/mediaplayer.png" />
+            <div data-toggle="contenedor-proyectos" id="misDocumentos">
+                <img src="img/mydocs.dll_14_100-8.png" />
+                Mis Proyectos
+            </div>
+            <div data-toggle="calculadora" id="btn-calculadora">
+                <img src="img/Calc.png" />
+                calculadora
+            </div>
+            <div data-toggle="contenedor-aplicaciones" id="misAplicaciones">
+                <img src="img/284.ico" />
+                Aplicaciones
+            </div>
+            <div id="hora">
+                <img class="iconosHora" src="img/stobject.dll_14_210-4.png" />
+                <img class="iconosHora" src="img/altavoz.png" />
+                <img class="iconosHora" src="img/irprops.cpl_14_167-5.png" />
+                <img class="iconosHora" src="img/wuaucpl.cpl_14_2-3.png" />
+                <div id="reloj"></div>
+            </div>
+        </div>
+        <!-- MENÚ INICIO -->
+        <nav aria-hidden="true" aria-label="Menú Inicio" id="menuInicio">
+            <div id="cabecera_inicio">
+                Nicolas Luini
+            </div>
+            <div id="archivos_inicio">
+                <div id="barra_izquierda_inicio">
+                    <div>
+                        <img alt="" src="img/explorer.png" />
+                        <p>internet explorer</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/OE2001.webp" />
+                        <p>E-mail</p>
+                    </div>
+                    <div class="div_falso"></div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/setup_wm.exe_14_71-6.png" />
+                        <p>Windows media player</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/msn.png" />
+                        <p>MSN explorer</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/neroburning.webp" />
+                        <p>Nero Burning Rom</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/ares.png" />
+                        <p>Ares</p>
+                    </div>
+                    <div class="div_falso"></div>
+                    <div id="todos_programas">
+                        <p>Todos los programas </p>
+                        <img alt="" src="img/icons-inicio/876.ico" />
+                    </div>
+                </div>
+                <div id="barra_derecha_inicio">
+                    <div>
+                        <img alt="" src="img/icons-inicio/misdocumentos.png" />
+                        <p>Mis Docuentos</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/misimagenes.png" />
+                        <p>Mis Imagenes</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/mimusica.png" />
+                        <p>Mi Música</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/mipc.png" />
+                        <p>Mi Pc</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/panelcontrol.png" />
+                        <p>Panel de Control</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/629.ico" />
+                        <p>Conexion</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/869.ico" />
+                        <p>Impresoras</p>
+                    </div>
+                    <div>
+                        <img alt="" src="img/icons-inicio/24.ico" />
+                        <p>Ayuda y soporte</p>
+                    </div>
+                </div>
+            </div>
+            <div id="cierre_inicio">
+                <div><img alt="" src="img/icons-inicio/334.ico" />Cerrar Sesion</div>
+                <div><img alt="" src="img/icons-inicio/237.ico" />pagar</div>
+            </div>
+        </nav>
+    </footer>
+    <!--FUNCION MOVIMIENTO VENTANAS-->
+    <!-- SUPERPOSICION DE VENTANAS -->
+    <!-- BOTON INICIO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+    <script src="js/desktop/windows.js"></script>
+    <script src="js/desktop/drag.js"></script>
+    <script src="js/desktop/clock.js"></script>
+    <script src="js/desktop/startmenu.js"></script>
+    <script src="js/desktop/fullscreen.js"></script>
+    <script src="js/desktop/taskbar.js"></script>
+    <script src="js/desktop/icons.js"></script>
+    <script src="js/apps/notas.js"></script>
+    <script src="js/apps/msn.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calculadora.js"></script>
+</body>
+
+</html>
