@@ -36,7 +36,7 @@ La idea es combinar **nostalgia + frontend moderno**, demostrando creatividad y 
 
 ## 📸 Preview
 
-![Preview del proyecto](img/preview.png)
+![Preview del proyecto](img/preview-social.png)
 
 ---
 
